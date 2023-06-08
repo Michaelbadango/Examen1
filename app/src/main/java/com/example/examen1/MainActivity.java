@@ -3,6 +3,7 @@ package com.example.examen1;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
@@ -23,5 +24,9 @@ public class MainActivity extends AppCompatActivity {
         txt_atrasos = findViewById(R.id.txt_atrasos);
         txt_horas = findViewById(R.id.txt_horas);
         txt_sueldoT = findViewById(R.id.txt_sueldoT);
+    }
+
+    public void registrar(View view){
+        
     }
 }
