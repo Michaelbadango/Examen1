@@ -38,7 +38,6 @@ public class MainActivity extends AppCompatActivity {
         String atrasos = txt_atrasos.getText().toString();
         int horas = Integer.parseInt(txt_horas.getText().toString());
 
-        if(!nombre.isEmpty() && !cargo.isEmpty() && area.isEmpty() && !estado.isEmpty() && !atrasos.isEmpty()){
             ContentValues registro = new ContentValues();
             registro.put("f_nombre",nombre);
             registro.put("f_cargo",cargo);
@@ -48,9 +47,9 @@ public class MainActivity extends AppCompatActivity {
 
             // Calcular el sueldo base en función del cargo
             double sueldoBase = 0;
-            if (cargo.equalsIgnoreCase("docente")) {
+            if (cargo.equalsIgnoreCase("Docente")) {
                 sueldoBase = 1000;
-            } else if (cargo.equalsIgnoreCase("funcionario")) {
+            } else if (cargo.equalsIgnoreCase("Funcionario")) {
                 sueldoBase = 880;
             }
             registro.put("f_sueldo",sueldoBase);
@@ -71,8 +70,5 @@ public class MainActivity extends AppCompatActivity {
             bd.insert("t_funcionario", null,registro);
             bd.close();
             Toast.makeText(this, "REGISTRO EXITOSO", Toast.LENGTH_SHORT).show();
-        }else {
-            Toast.makeText(this, "PORFAVOR INGRESAR TODOS LOS CAMPOS", Toast.LENGTH_SHORT).show();
-        }
     }
 }

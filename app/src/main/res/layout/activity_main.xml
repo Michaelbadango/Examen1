@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#62B3D1"
     tools:context=".MainActivity">
 
     <EditText
@@ -94,7 +95,7 @@
         android:layout_marginEnd="295dp"
         android:layout_marginRight="295dp"
         android:layout_marginBottom="235dp"
-        android:text="HORAS:" />
+        android:text="HORAS EXTRAS:" />
 
     <TextView
         android:id="@+id/textView10"
@@ -199,9 +200,10 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="158dp"
-        android:layout_marginRight="158dp"
-        android:layout_marginBottom="67dp"
+        android:layout_marginEnd="159dp"
+        android:layout_marginRight="159dp"
+        android:layout_marginBottom="93dp"
+        android:onClick="registrar"
         android:text="ENVIAR" />
 
     <EditText
