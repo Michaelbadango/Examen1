@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Examen1</string>
+
+    <string-array name="cargos">
+        <item>Funcionario</item>
+        <item>Docente</item>
+    </string-array>
+
 </resources>
