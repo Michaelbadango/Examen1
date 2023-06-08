@@ -12,8 +12,7 @@ import android.widget.Toast;
 import com.example.examen1.bd.BDHelper;
 
 public class MainActivity extends AppCompatActivity {
-    EditText txt_nombre, txt_cargo, txt_area, txt_estado, txt_hijos, txt_sueldo, txt_subsidio,
-    txt_atrasos, txt_horas, txt_sueldoT;
+    EditText txt_nombre, txt_cargo, txt_area, txt_estado, txt_hijos, txt_atrasos, txt_horas;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,11 +23,8 @@ public class MainActivity extends AppCompatActivity {
         txt_area = findViewById(R.id.txt_area);
         txt_estado = findViewById(R.id.txt_estado);
         txt_hijos = findViewById(R.id.txt_hijos);
-        txt_sueldo = findViewById(R.id.txt_subsidio);
-        txt_subsidio = findViewById(R.id.txt_subsidio);
         txt_atrasos = findViewById(R.id.txt_atrasos);
         txt_horas = findViewById(R.id.txt_horas);
-        txt_sueldoT = findViewById(R.id.txt_sueldoT);
     }
 
     public void registrar(View view){
@@ -40,9 +36,9 @@ public class MainActivity extends AppCompatActivity {
         String estado = txt_estado.getText().toString();
         int hijos = Integer.parseInt(txt_hijos.getText().toString());
         String atrasos = txt_atrasos.getText().toString();
-        String horas = txt_horas.getText().toString();
+        int horas = Integer.parseInt(txt_horas.getText().toString());
 
-        if(!nombre.isEmpty() && !cargo.isEmpty() && area.isEmpty() && !estado.isEmpty() && !atrasos.isEmpty() && !horas.isEmpty()){
+        if(!nombre.isEmpty() && !cargo.isEmpty() && area.isEmpty() && !estado.isEmpty() && !atrasos.isEmpty()){
             ContentValues registro = new ContentValues();
             registro.put("f_nombre",nombre);
             registro.put("f_cargo",cargo);
@@ -67,9 +63,16 @@ public class MainActivity extends AppCompatActivity {
             registro.put("f_atrasos",atrasos);
             registro.put("f_horas",horas);
 
-            bd.insert("t_funcionario", null,registro);
-            Toast.makeText(this, "REGISTRO EXITOSO", Toast.LENGTH_SHORT).show();
+            // Calcular el sueldo total
+            double sueldoTotal = sueldoBase + subsidio + (horas * 12);
+            registro.put("f_sueldoT", sueldoTotal);
 
+
+            bd.insert("t_funcionario", null,registro);
+            bd.close();
+            Toast.makeText(this, "REGISTRO EXITOSO", Toast.LENGTH_SHORT).show();
+        }else {
+            Toast.makeText(this, "PORFAVOR INGRESAR TODOS LOS CAMPOS", Toast.LENGTH_SHORT).show();
         }
     }
 }
