@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#62B3D1"
+    android:background="#D3EAF3"
     tools:context=".MainActivity">
 
     <EditText
@@ -14,8 +14,8 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="60dp"
-        android:layout_marginRight="60dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginRight="48dp"
         android:layout_marginBottom="227dp"
         android:ems="10"
         android:inputType="text" />
@@ -27,9 +27,9 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="62dp"
-        android:layout_marginRight="62dp"
-        android:layout_marginBottom="294dp"
+        android:layout_marginEnd="52dp"
+        android:layout_marginRight="52dp"
+        android:layout_marginBottom="301dp"
         android:ems="10"
         android:inputType="text" />
 
@@ -40,9 +40,9 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="61dp"
-        android:layout_marginRight="61dp"
-        android:layout_marginBottom="370dp"
+        android:layout_marginEnd="51dp"
+        android:layout_marginRight="51dp"
+        android:layout_marginBottom="380dp"
         android:ems="10"
         android:inputType="text" />
 
@@ -53,9 +53,9 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="62dp"
-        android:layout_marginRight="62dp"
-        android:layout_marginBottom="446dp"
+        android:layout_marginEnd="51dp"
+        android:layout_marginRight="51dp"
+        android:layout_marginBottom="450dp"
         android:ems="10"
         android:inputType="text" />
 
@@ -66,9 +66,9 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="65dp"
-        android:layout_marginRight="65dp"
-        android:layout_marginBottom="517dp"
+        android:layout_marginEnd="51dp"
+        android:layout_marginRight="51dp"
+        android:layout_marginBottom="514dp"
         android:ems="10"
         android:inputType="text" />
 
@@ -79,8 +79,8 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="64dp"
-        android:layout_marginRight="64dp"
+        android:layout_marginEnd="53dp"
+        android:layout_marginRight="53dp"
         android:layout_marginBottom="573dp"
         android:ems="10"
         android:inputType="text" />
@@ -92,9 +92,9 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="295dp"
-        android:layout_marginRight="295dp"
-        android:layout_marginBottom="235dp"
+        android:layout_marginEnd="270dp"
+        android:layout_marginRight="270dp"
+        android:layout_marginBottom="238dp"
         android:text="HORAS EXTRAS:" />
 
     <TextView
@@ -104,9 +104,9 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="296dp"
-        android:layout_marginRight="296dp"
-        android:layout_marginBottom="297dp"
+        android:layout_marginEnd="276dp"
+        android:layout_marginRight="276dp"
+        android:layout_marginBottom="318dp"
         android:text="ATRASOS:" />
 
     <TextView
@@ -116,9 +116,9 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="297dp"
-        android:layout_marginRight="297dp"
-        android:layout_marginBottom="374dp"
+        android:layout_marginEnd="279dp"
+        android:layout_marginRight="279dp"
+        android:layout_marginBottom="386dp"
         android:text="NRO HIJOS:" />
 
     <TextView
@@ -128,9 +128,9 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="288dp"
-        android:layout_marginRight="288dp"
-        android:layout_marginBottom="455dp"
+        android:layout_marginEnd="274dp"
+        android:layout_marginRight="274dp"
+        android:layout_marginBottom="453dp"
         android:text="ESTADO CIVIL:" />
 
     <TextView
@@ -167,6 +167,7 @@
         android:layout_marginEnd="289dp"
         android:layout_marginRight="289dp"
         android:layout_marginBottom="651dp"
+        android:shadowColor="#070707"
         android:text="NOMBRE:" />
 
     <TextView
@@ -213,9 +214,9 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="69dp"
-        android:layout_marginRight="69dp"
-        android:layout_marginBottom="642dp"
+        android:layout_marginEnd="55dp"
+        android:layout_marginRight="55dp"
+        android:layout_marginBottom="629dp"
         android:ems="10"
         android:inputType="text" />
 

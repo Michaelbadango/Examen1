@@ -62,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
             registro.put("f_atrasos",atrasos);
             registro.put("f_horas",horas);
 
+
             // Calcular el sueldo total
             double sueldoTotal = sueldoBase + subsidio + (horas * 12);
             registro.put("f_sueldoT", sueldoTotal);
