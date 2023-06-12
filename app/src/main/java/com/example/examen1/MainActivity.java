@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
             txt_sueldor.setText(this.determinarSueldo(cargo)+"");
             txt_subsidio.setText(this.subsidio(hijos)+"");
             txt_horasr.setText(sueldoTotal+"");
-            txt_extras.setText(this.Calculohoras(hijos));
+          
 
     }
 
