@@ -12,8 +12,8 @@ import android.widget.Toast;
 import com.example.examen1.bd.BDHelper;
 
 public class MainActivity extends AppCompatActivity {
-    EditText txt_nombre, txt_cargo, txt_area, txt_estado, txt_hijos, txt_atrasos, txt_horas, txt_sueldor,
-            txt_subsidio, txt_horasr;
+    EditText txt_id, txt_nombre, txt_cargo, txt_area, txt_estado, txt_hijos, txt_atrasos, txt_horas, txt_sueldor,
+            txt_subsidio, txt_horasr, txt_extras;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         txt_sueldor = findViewById(R.id.txt_sueldor);
         txt_subsidio = findViewById(R.id.txt_subsidio);
         txt_horasr = findViewById(R.id.txt_horasr);
+        txt_extras = findViewById(R.id.txt_extras);
     }
 
     public void registrar(View view){
@@ -80,6 +81,7 @@ public class MainActivity extends AppCompatActivity {
             txt_sueldor.setText(this.determinarSueldo(cargo)+"");
             txt_subsidio.setText(this.subsidio(hijos)+"");
             txt_horasr.setText(sueldoTotal+"");
+            txt_extras.setText(this.Calculohoras(hijos));
 
     }
 
@@ -98,6 +100,7 @@ public class MainActivity extends AppCompatActivity {
     public double subsidio(int numero){
         double sub=0.00;
 
+
         if(numero>0){
             sub=numero*50;
         }else{
@@ -105,5 +108,52 @@ public class MainActivity extends AppCompatActivity {
         }
         return sub;
     }
+
+    public double Calculohoras(double horas){
+        double extras = 0;
+        if (horas>0){
+            extras = horas * 12;
+        }else {
+            return extras = 0;
+        }
+        return extras;
+    }
+
+    public void descuento(String item, double sueldo){
+        double des = 0.00;
+        if (item.equals("Si")==true){
+            des = sueldo*0.08;
+        }else {
+            des = 0;
+        }
+    }
+
+
+    public void modificar(View view) {
+        BDHelper admin = new BDHelper(this, "Registro.db", null, 1);
+        SQLiteDatabase bd = admin.getWritableDatabase();
+
+        String id = txt_id.getText().toString();
+        String nombre = txt_nombre.getText().toString();
+
+
+        String tabla = "t_funcionario";
+        String campoID = "usu_id";
+        String clausura = campoID + " = ?";
+        String[] where = { id };
+
+        ContentValues registro = new ContentValues();
+        registro.put("f_nombre",nombre);
+
+        int registrosActualizados = bd.update(tabla, registro, clausura, where);
+        if (registrosActualizados > 0) {
+            Toast.makeText(this, "Registro modificado exitosamente", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(this, "No se encontró el registro a modificar", Toast.LENGTH_SHORT).show();
+        }
+
+        bd.close();
+    }
+
 
 }
