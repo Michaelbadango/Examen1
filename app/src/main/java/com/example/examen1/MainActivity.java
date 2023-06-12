@@ -12,7 +12,8 @@ import android.widget.Toast;
 import com.example.examen1.bd.BDHelper;
 
 public class MainActivity extends AppCompatActivity {
-    EditText txt_nombre, txt_cargo, txt_area, txt_estado, txt_hijos, txt_atrasos, txt_horas;
+    EditText txt_nombre, txt_cargo, txt_area, txt_estado, txt_hijos, txt_atrasos, txt_horas, txt_sueldor,
+            txt_subsidio, txt_horasr;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +26,9 @@ public class MainActivity extends AppCompatActivity {
         txt_hijos = findViewById(R.id.txt_hijos);
         txt_atrasos = findViewById(R.id.txt_atrasos);
         txt_horas = findViewById(R.id.txt_horas);
+        txt_sueldor = findViewById(R.id.txt_sueldor);
+        txt_subsidio = findViewById(R.id.txt_subsidio);
+        txt_horasr = findViewById(R.id.txt_horasr);
     }
 
     public void registrar(View view){
@@ -54,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
             }
             registro.put("f_sueldo",sueldoBase);
 
+
             // Calcular el subsidio en función del número de hijos
             double subsidio = hijos * 50;
             registro.put("f_subsidio",subsidio);
@@ -71,5 +76,34 @@ public class MainActivity extends AppCompatActivity {
             bd.insert("t_funcionario", null,registro);
             bd.close();
             Toast.makeText(this, "REGISTRO EXITOSO", Toast.LENGTH_SHORT).show();
+
+            txt_sueldor.setText(this.determinarSueldo(cargo)+"");
+            txt_subsidio.setText(this.subsidio(hijos)+"");
+            txt_horasr.setText(sueldoTotal+"");
+
     }
+
+    public double determinarSueldo(String cargo){
+        double sueldo=0.00;
+        //String cargo=et_cargo.getText().toString();
+        if (cargo.equals("Administrativo")==true) {
+            sueldo=880.00;
+        }else if(cargo.equals("Docente")==true){
+
+            sueldo= 1000.00;
+        }
+        return sueldo;
+    }
+
+    public double subsidio(int numero){
+        double sub=0.00;
+
+        if(numero>0){
+            sub=numero*50;
+        }else{
+            sub=0;
+        }
+        return sub;
+    }
+
 }

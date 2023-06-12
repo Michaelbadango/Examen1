@@ -8,15 +8,90 @@
     tools:context=".MainActivity">
 
     <EditText
+        android:id="@+id/txt_horasr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="33dp"
+        android:layout_marginRight="33dp"
+        android:layout_marginBottom="56dp"
+        android:ems="10"
+        android:inputType="text" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="264dp"
+        android:layout_marginRight="264dp"
+        android:layout_marginBottom="67dp"
+        android:text="SUELDO TOTAL:" />
+
+    <EditText
+        android:id="@+id/txt_subsidio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="35dp"
+        android:layout_marginRight="35dp"
+        android:layout_marginBottom="113dp"
+        android:ems="10"
+        android:inputType="text" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="267dp"
+        android:layout_marginRight="267dp"
+        android:layout_marginBottom="133dp"
+        android:text="SUBSIDIO:" />
+
+    <EditText
+        android:id="@+id/txt_sueldor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="37dp"
+        android:layout_marginRight="37dp"
+        android:layout_marginBottom="174dp"
+        android:ems="10"
+        android:inputType="text" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="267dp"
+        android:layout_marginRight="267dp"
+        android:layout_marginBottom="188dp"
+        android:text="SUELDO:" />
+
+    <EditText
         android:id="@+id/txt_horas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="48dp"
-        android:layout_marginRight="48dp"
-        android:layout_marginBottom="227dp"
+        android:layout_marginEnd="46dp"
+        android:layout_marginRight="46dp"
+        android:layout_marginBottom="290dp"
         android:ems="10"
         android:inputType="text" />
 
@@ -27,9 +102,9 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="52dp"
-        android:layout_marginRight="52dp"
-        android:layout_marginBottom="301dp"
+        android:layout_marginEnd="47dp"
+        android:layout_marginRight="47dp"
+        android:layout_marginBottom="357dp"
         android:ems="10"
         android:inputType="text" />
 
@@ -40,9 +115,9 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="51dp"
-        android:layout_marginRight="51dp"
-        android:layout_marginBottom="380dp"
+        android:layout_marginEnd="47dp"
+        android:layout_marginRight="47dp"
+        android:layout_marginBottom="419dp"
         android:ems="10"
         android:inputType="text" />
 
@@ -53,9 +128,9 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="51dp"
-        android:layout_marginRight="51dp"
-        android:layout_marginBottom="450dp"
+        android:layout_marginEnd="52dp"
+        android:layout_marginRight="52dp"
+        android:layout_marginBottom="476dp"
         android:ems="10"
         android:inputType="text" />
 
@@ -66,9 +141,9 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="51dp"
-        android:layout_marginRight="51dp"
-        android:layout_marginBottom="514dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginBottom="534dp"
         android:ems="10"
         android:inputType="text" />
 
@@ -81,7 +156,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="53dp"
         android:layout_marginRight="53dp"
-        android:layout_marginBottom="573dp"
+        android:layout_marginBottom="592dp"
         android:ems="10"
         android:inputType="text" />
 
@@ -94,7 +169,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="270dp"
         android:layout_marginRight="270dp"
-        android:layout_marginBottom="238dp"
+        android:layout_marginBottom="302dp"
         android:text="HORAS EXTRAS:" />
 
     <TextView
@@ -106,7 +181,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="276dp"
         android:layout_marginRight="276dp"
-        android:layout_marginBottom="318dp"
+        android:layout_marginBottom="373dp"
         android:text="ATRASOS:" />
 
     <TextView
@@ -118,7 +193,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="279dp"
         android:layout_marginRight="279dp"
-        android:layout_marginBottom="386dp"
+        android:layout_marginBottom="433dp"
         android:text="NRO HIJOS:" />
 
     <TextView
@@ -128,9 +203,9 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="274dp"
-        android:layout_marginRight="274dp"
-        android:layout_marginBottom="453dp"
+        android:layout_marginEnd="273dp"
+        android:layout_marginRight="273dp"
+        android:layout_marginBottom="488dp"
         android:text="ESTADO CIVIL:" />
 
     <TextView
@@ -140,9 +215,9 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="291dp"
-        android:layout_marginRight="291dp"
-        android:layout_marginBottom="579dp"
+        android:layout_marginEnd="293dp"
+        android:layout_marginRight="293dp"
+        android:layout_marginBottom="602dp"
         android:text="CARGO:" />
 
     <TextView
@@ -154,7 +229,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="289dp"
         android:layout_marginRight="289dp"
-        android:layout_marginBottom="524dp"
+        android:layout_marginBottom="550dp"
         android:text="AREA:" />
 
     <TextView
@@ -201,9 +276,9 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="159dp"
-        android:layout_marginRight="159dp"
-        android:layout_marginBottom="93dp"
+        android:layout_marginEnd="43dp"
+        android:layout_marginRight="43dp"
+        android:layout_marginBottom="229dp"
         android:onClick="registrar"
         android:text="ENVIAR" />
 
@@ -216,7 +291,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="55dp"
         android:layout_marginRight="55dp"
-        android:layout_marginBottom="629dp"
+        android:layout_marginBottom="646dp"
         android:ems="10"
         android:inputType="text" />
 
