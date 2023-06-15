@@ -14,14 +14,14 @@ public class BDHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("CREATE TABLE t_funcionario"+"(" +
-                "usu_id INTEGER PRIMARY KEY AUTOINCREMENT," +
-                "f_nombre tetx NOT NULL," +
+                "usu_id INTEGER PRIMARY KEY," +
+                "f_nombre text NOT NULL," +
                 "f_cargo text NOT NULL," +
                 "f_area text NOT NULL," +
                 "f_estado text NOT NULL," +
                 "f_hijos text NOT NULL," +
                 "f_sueldo text NOT NULL," +
-                "f_subsidio NOT NULL," +
+                "f_subsidio text NOT NULL," +
                 "f_atrasos text NOT NULL," +
                 "f_horas text NOT NULL," +
                 "f_sueldoT text NOT NULL)");

@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        txt_id = findViewById(R.id.txt_id);
         txt_nombre =findViewById(R.id.txt_nombre);
         txt_cargo = findViewById(R.id.txt_cargo);
         txt_area = findViewById(R.id.txt_area);
@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
     public void registrar(View view){
         BDHelper admin = new BDHelper(this,"Registro.db",null,1);
         SQLiteDatabase bd = admin.getWritableDatabase();
+        String id = txt_id.getText().toString();
         String nombre = txt_nombre.getText().toString();
         String cargo = txt_cargo.getText().toString();
         String area = txt_area.getText().toString();
@@ -44,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
         int horas = Integer.parseInt(txt_horas.getText().toString());
 
             ContentValues registro = new ContentValues();
+             registro.put("usu_id",id);
             registro.put("f_nombre",nombre);
             registro.put("f_cargo",cargo);
             registro.put("f_area",area);
@@ -81,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
             txt_sueldor.setText(this.determinarSueldo(cargo)+"");
             txt_subsidio.setText(this.subsidio(hijos)+"");
             txt_horasr.setText(sueldoTotal+"");
-          
+
 
     }
 
@@ -135,25 +137,71 @@ public class MainActivity extends AppCompatActivity {
 
         String id = txt_id.getText().toString();
         String nombre = txt_nombre.getText().toString();
+        String cargo = txt_cargo.getText().toString();
+        String area = txt_area.getText().toString();
+        String estado = txt_estado.getText().toString();
+        int hijos = Integer.parseInt(txt_hijos.getText().toString());
+        String atrasos = txt_atrasos.getText().toString();
+        int horas = Integer.parseInt(txt_horas.getText().toString());
 
+        ContentValues registro = new ContentValues();
+        registro.put("f_nombre", nombre);
+        registro.put("f_cargo", cargo);
+        registro.put("f_area", area);
+        registro.put("f_estado", estado);
+        registro.put("f_hijos", hijos);
+        registro.put("f_atrasos", atrasos);
+        registro.put("f_horas", horas);
+
+        // Calcular el sueldo base en función del cargo
+        double sueldoBase = determinarSueldo(cargo);
+        registro.put("f_sueldo", sueldoBase);
+
+        // Calcular el subsidio en función del número de hijos
+        double subsidio = subsidio(hijos);
+        registro.put("f_subsidio", subsidio);
+
+        // Calcular el sueldo total
+        double sueldoTotal = sueldoBase + subsidio + (horas * 12);
+        registro.put("f_sueldoT", sueldoTotal);
 
         String tabla = "t_funcionario";
         String campoID = "usu_id";
-        String clausura = campoID + " = ?";
-        String[] where = { id };
+        String whereClause = campoID + " = ?";
+        String[] whereArgs = { id };
 
-        ContentValues registro = new ContentValues();
-        registro.put("f_nombre",nombre);
-
-        int registrosActualizados = bd.update(tabla, registro, clausura, where);
+        int registrosActualizados = bd.update(tabla, registro, whereClause, whereArgs);
         if (registrosActualizados > 0) {
             Toast.makeText(this, "Registro modificado exitosamente", Toast.LENGTH_SHORT).show();
         } else {
             Toast.makeText(this, "No se encontró el registro a modificar", Toast.LENGTH_SHORT).show();
         }
+        bd.close();
+        txt_sueldor.setText(determinarSueldo(cargo) + "");
+        txt_subsidio.setText(subsidio(hijos) + "");
+        txt_horasr.setText(sueldoTotal + "");
+    }
 
+    public void eliminar(View view) {
+        BDHelper admin = new BDHelper(this, "Registro.db", null, 1);
+        SQLiteDatabase bd = admin.getWritableDatabase();
+
+        String id = txt_id.getText().toString();
+        String tabla = "t_funcionario";
+        String campoID = "usu_id";
+        String whereClause = campoID + " = ?";
+        String[] whereArgs = { id };
+
+        int registrosEliminados = bd.delete(tabla, whereClause, whereArgs);
+        if (registrosEliminados > 0) {
+            Toast.makeText(this, "Registro eliminado exitosamente", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(this, "No se encontró el registro a eliminar", Toast.LENGTH_SHORT).show();
+        }
         bd.close();
     }
+
+
 
 
 }

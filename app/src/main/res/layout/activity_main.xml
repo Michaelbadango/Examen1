@@ -7,6 +7,19 @@
     android:background="#D3EAF3"
     tools:context=".MainActivity">
 
+    <Button
+        android:id="@+id/btn_modificar2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="269dp"
+        android:layout_marginRight="269dp"
+        android:layout_marginBottom="227dp"
+        android:onClick="eliminar"
+        android:text="ELIMINAR" />
+
     <TextView
         android:id="@+id/textView14"
         android:layout_width="wrap_content"
@@ -64,9 +77,9 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="158dp"
-        android:layout_marginRight="158dp"
-        android:layout_marginBottom="229dp"
+        android:layout_marginEnd="138dp"
+        android:layout_marginRight="138dp"
+        android:layout_marginBottom="228dp"
         android:onClick="modificar"
         android:text="MODIFICAR" />
 
@@ -327,9 +340,9 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="43dp"
-        android:layout_marginRight="43dp"
-        android:layout_marginBottom="229dp"
+        android:layout_marginEnd="26dp"
+        android:layout_marginRight="26dp"
+        android:layout_marginBottom="228dp"
         android:onClick="registrar"
         android:text="ENVIAR" />
 
